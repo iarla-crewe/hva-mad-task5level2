@@ -17,7 +17,18 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.MadLevel5Task2.PopupOverlay" />
+            app:popupTheme="@style/Theme.MadLevel5Task2.PopupOverlay">
+
+            <ImageButton
+                android:id="@+id/ib_DeleteAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_delete_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tint="@android:color/white"
+                tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck"/>
+        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 

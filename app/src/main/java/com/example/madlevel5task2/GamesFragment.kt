@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.madlevel5task2.databinding.FragmentGamesBinding
 
 class GamesFragment : Fragment() {
@@ -31,6 +32,8 @@ class GamesFragment : Fragment() {
     }
 
     private fun initViews() {
-
+        binding.fabAdd.setOnClickListener {
+            findNavController().navigate(R.id.action_gamesFragment_to_addGameFragment)
+        }
     }
 }

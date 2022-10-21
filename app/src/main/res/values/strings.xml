@@ -18,7 +18,7 @@
     <string name="date_month">Month</string>
     <string name="date_year">Year</string>
 
-    <stirng name="error_empty_title">Please fill in a title</stirng>
-    <stirng name="error_empty_platform">Please fill in a platform</stirng>
-    <stirng name="error_date">Please fill in a valid date</stirng>
+    <string name="error_empty_title">Please fill in a title</string>
+    <string name="error_empty_platform">Please fill in a platform</string>
+    <string name="error_date">Please fill in a valid date</string>
 </resources>
