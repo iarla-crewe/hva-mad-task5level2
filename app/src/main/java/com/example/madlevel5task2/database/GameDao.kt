@@ -13,11 +13,11 @@ interface GameDao {
     fun getGames(): LiveData<List<Game>>
 
     @Insert
-    fun insertGame(game: Game)
+    suspend fun insertGame(game: Game)
 
     @Delete
-    fun deleteGame(game: Game)
+    suspend fun deleteGame(game: Game)
 
     @Query ("DELETE FROM gameTable")
-    fun deleteAllGames()
+    suspend fun deleteAllGames()
 }
