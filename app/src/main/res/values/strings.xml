@@ -1,6 +1,24 @@
 <resources>
     <string name="app_name">MadLevel5Task2</string>
     <string name="action_settings">Settings</string>
-    <string name="games_fragment_label">First Fragment</string>
-    <string name="add_game_fragment_label">Second Fragment</string>
+    <string name="games_fragment_label">Game Backlog</string>
+    <string name="add_game_fragment_label">Add Game</string>
+
+    <!-- Games Fragment -->
+    <string name="game_release_date">Release: %1$s</string>
+    <string name="success_delete">Successfully deleted game</string>
+    <string name="success_delete_all">Successfully deleted backlog</string>
+    <string name="undo">UNDO</string>
+
+
+    <!-- Add Game Fragment -->
+    <string name="game_title">Title</string>
+    <string name="game_platform">Platform</string>
+    <string name="date_day">Day</string>
+    <string name="date_month">Month</string>
+    <string name="date_year">Year</string>
+
+    <stirng name="error_empty_title">Please fill in a title</stirng>
+    <stirng name="error_empty_platform">Please fill in a platform</stirng>
+    <stirng name="error_date">Please fill in a valid date</stirng>
 </resources>
