@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/gamesFragment2"
         android:name="com.example.madlevel5task2.GamesFragment"
-        android:label="fragment_games"
+        android:label="@string/games_fragment_label"
         tools:layout="@layout/fragment_games" >
         <action
             android:id="@+id/action_gamesFragment2_to_addGameFragment"
@@ -16,6 +16,6 @@
     <fragment
         android:id="@+id/addGameFragment"
         android:name="com.example.madlevel5task2.AddGameFragment"
-        android:label="fragment_add_game"
+        android:label="@string/add_game_fragment_label"
         tools:layout="@layout/fragment_add_game" />
 </navigation>
