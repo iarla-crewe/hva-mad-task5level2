@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.madlevel5task2.R
@@ -50,6 +51,7 @@ class GamesFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         recyclerView.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
         recyclerView.adapter = gameAdaptor
+        createItemTouchHelper().attachToRecyclerView(recyclerView)
 
         binding.fabAdd.setOnClickListener {
             findNavController().navigate(R.id.action_gamesFragment_to_addGameFragment)
@@ -63,5 +65,21 @@ class GamesFragment : Fragment() {
             this@GamesFragment.games.sortBy { it.releaseDate }
             gameAdaptor.notifyDataSetChanged()
         })
+    }
+
+    private fun createItemTouchHelper() : ItemTouchHelper {
+        val callback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ) : Boolean { return false }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.adapterPosition
+                viewModel.deleteGame(games[position])
+            }
+        }
+        return ItemTouchHelper(callback)
     }
 }
