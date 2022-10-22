@@ -13,7 +13,9 @@ class GameAdaptor(private val games: List<Game>) : RecyclerView.Adapter<GameAdap
         private val binding = ItemGameBinding.bind(itemView)
 
         fun databind(game: Game) {
-            //TODO - Bind data to layout
+            binding.tvGameTitle.text = game.title
+            binding.tvGamePlatform.text = game.platform
+            binding.tvGameReleaseDate.text = game.releaseDate
         }
     }
 

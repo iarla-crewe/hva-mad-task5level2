@@ -3,18 +3,17 @@ package com.example.madlevel5task2.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.*
 
 @Entity(tableName = "gameTable")
 data class Game (
     @ColumnInfo
-    val Title: String,
+    val title: String,
 
     @ColumnInfo
-    val Platform: String,
+    val platform: String,
 
     @ColumnInfo
-    val ReleaseDate: Date,
+    val releaseDate: String,
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo

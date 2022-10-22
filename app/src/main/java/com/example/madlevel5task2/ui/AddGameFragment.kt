@@ -12,8 +12,6 @@ import com.example.madlevel5task2.R
 import com.example.madlevel5task2.databinding.FragmentAddGameBinding
 import com.example.madlevel5task2.model.Game
 import com.example.madlevel5task2.model.GameViewModel
-import java.time.Month
-import java.util.*
 
 class AddGameFragment : Fragment() {
     private var _binding: FragmentAddGameBinding? = null
@@ -45,25 +43,24 @@ class AddGameFragment : Fragment() {
     private fun saveGame() {
         val title = binding.etTitle.text.toString()
         val platform = binding.etPlatform.text.toString()
-        val year = binding.etDateYear.text.toString()
-        val month = binding.etDateMonth.text.toString()
-        val day = binding.etDateDay.text.toString()
+        val date =
+            binding.etDateYear.text.toString() + binding.etDateMonth.text.toString() + binding.etDateDay.text.toString()
 
-        if (validateGame(title, platform, year, month, day)) {
-            var date = Date(year.toInt(), month.toInt(), day.toInt())
-            viewModel.insertGame(Game(title, platform, date))
+        val game = Game(title, platform, date)
+        if (validateGame(game)) {
+            viewModel.insertGame(game)
             findNavController().popBackStack()
         }
     }
 
-    private fun validateGame(title: String, platform: String, year: String, month: String, day: String) : Boolean {
-        if (title.isBlank()) {
+    private fun validateGame(game: Game) : Boolean {
+        if (game.title.isBlank()) {
             return showErrorMessage(R.string.error_empty_title)
         }
-        if (platform.isBlank()) {
+        if (game.platform.isBlank()) {
             return showErrorMessage(R.string.error_empty_platform)
         }
-        if (year.isBlank() || month.isBlank() || day.isBlank()) {
+        if (game.releaseDate.isBlank()) {
             return showErrorMessage(R.string.error_date)
         }
 
