@@ -7,7 +7,7 @@
     <string name="btn_delete">Delete</string>
 
     <!-- Games Fragment -->
-    <string name="game_release_date">Release: %1$s</string>
+    <string name="game_release_date">Release: %1$s/%2$s/%3$s</string>
     <string name="success_delete">Successfully deleted game</string>
     <string name="success_delete_all">Successfully deleted backlog</string>
     <string name="undo">UNDO</string>

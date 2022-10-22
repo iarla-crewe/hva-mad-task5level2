@@ -43,28 +43,32 @@ class AddGameFragment : Fragment() {
     private fun saveGame() {
         val title = binding.etTitle.text.toString()
         val platform = binding.etPlatform.text.toString()
-        val date =
-            "${binding.etDateYear.text.toString()} ${binding.etDateMonth.text.toString()} ${binding.etDateDay.text.toString()}"
+        val year = binding.etDateYear.text.toString()
+        val month = binding.etDateMonth.text.toString()
+        val day = binding.etDateDay.text.toString()
 
-        val game = Game(title, platform, date)
-        if (validateGame(game)) {
+        if (validateGame(title, platform, year, month, day)) {
+            val date = getString(R.string.game_release_date, year, month, day)
+            val game = Game(title, platform, date)
+
             viewModel.insertGame(game)
             findNavController().popBackStack()
         }
     }
 
-    private fun validateGame(game: Game) : Boolean {
-        if (game.title.isBlank()) {
-            return showErrorMessage(R.string.error_empty_title)
-        }
-        if (game.platform.isBlank()) {
-            return showErrorMessage(R.string.error_empty_platform)
-        }
-        if (game.releaseDate.isBlank()) {
-            return showErrorMessage(R.string.error_date)
+    private fun validateGame(
+        title: String, platform: String, year: String, month: String, day: String
+    ) : Boolean {
+        if (title.isBlank()) return showErrorMessage(R.string.error_empty_title)
+        if (platform.isBlank()) return showErrorMessage(R.string.error_empty_platform)
+
+        if (year.isNotBlank() && month.isNotBlank() && day.isNotBlank()) {
+            if (year.toInt() > 1900 && month.toInt() in 1..12 && day.toInt() in 1..31) {
+                return true
+            }
         }
 
-        return true
+        return showErrorMessage(R.string.error_date)
     }
 
     private fun showErrorMessage(msg_string_id: Int) : Boolean {
