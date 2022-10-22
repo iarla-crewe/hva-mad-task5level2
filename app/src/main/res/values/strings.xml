@@ -4,6 +4,8 @@
     <string name="games_fragment_label">Game Backlog</string>
     <string name="add_game_fragment_label">Add Game</string>
 
+    <string name="btn_delete">Delete</string>
+
     <!-- Games Fragment -->
     <string name="game_release_date">Release: %1$s</string>
     <string name="success_delete">Successfully deleted game</string>

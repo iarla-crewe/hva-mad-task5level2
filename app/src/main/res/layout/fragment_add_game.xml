@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.AddGameFragment" >
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_add_game"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_Save"
         android:layout_width="wrap_content"
@@ -35,9 +24,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_add_game"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -48,9 +37,9 @@
                 android:id="@+id/il_Title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_Title"
@@ -64,9 +53,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/il_Title"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintTop_toBottomOf="@id/il_Title">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_Platform"
@@ -80,10 +69,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/il_Platform"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/il_DateMonth"
-                app:layout_constraintBottom_toBottomOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/il_Platform">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_DateDay"
@@ -96,10 +85,10 @@
                 android:id="@+id/il_DateMonth"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="@id/il_DateDay"
-                app:layout_constraintStart_toEndOf="@id/il_DateDay"
+                app:layout_constraintBottom_toBottomOf="@id/il_DateDay"
                 app:layout_constraintEnd_toStartOf="@id/il_DateYear"
-                app:layout_constraintBottom_toBottomOf="@id/il_DateDay">
+                app:layout_constraintStart_toEndOf="@id/il_DateDay"
+                app:layout_constraintTop_toTopOf="@id/il_DateDay">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_DateMonth"
@@ -112,10 +101,10 @@
                 android:id="@+id/il_DateYear"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="@id/il_DateMonth"
-                app:layout_constraintStart_toEndOf="@id/il_DateMonth"
+                app:layout_constraintBottom_toBottomOf="@id/il_DateMonth"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="@id/il_DateMonth">
+                app:layout_constraintStart_toEndOf="@id/il_DateMonth"
+                app:layout_constraintTop_toTopOf="@id/il_DateMonth">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_DateYear"
