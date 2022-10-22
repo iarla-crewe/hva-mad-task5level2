@@ -44,7 +44,7 @@ class AddGameFragment : Fragment() {
         val title = binding.etTitle.text.toString()
         val platform = binding.etPlatform.text.toString()
         val date =
-            binding.etDateYear.text.toString() + binding.etDateMonth.text.toString() + binding.etDateDay.text.toString()
+            "${binding.etDateYear.text.toString()} ${binding.etDateMonth.text.toString()} ${binding.etDateDay.text.toString()}"
 
         val game = Game(title, platform, date)
         if (validateGame(game)) {

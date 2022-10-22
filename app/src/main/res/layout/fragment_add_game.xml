@@ -78,6 +78,7 @@
                     android:id="@+id/et_DateDay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="number"
                     android:hint="@string/date_day" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -94,6 +95,7 @@
                     android:id="@+id/et_DateMonth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="number"
                     android:hint="@string/date_month" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -110,6 +112,7 @@
                     android:id="@+id/et_DateYear"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="number"
                     android:hint="@string/date_year" />
             </com.google.android.material.textfield.TextInputLayout>
 
