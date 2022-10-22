@@ -8,10 +8,12 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.activity.viewModels
 import com.example.madlevel5task2.R
 import com.example.madlevel5task2.databinding.ActivityMainBinding
 import com.example.madlevel5task2.model.GameViewModel
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -47,6 +49,11 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_delete -> {
                 viewModel.deleteAllGames()
+                val snackbar = Snackbar.make(binding.toolbar, R.string.success_delete_all, Snackbar.LENGTH_LONG)
+                /*snackbar.setAction(R.string.undo, View.OnClickListener{
+                    viewModel.undoDeleteAllGames()
+                })*/
+                snackbar.show()
                 true
             }
             else -> super.onOptionsItemSelected(item)

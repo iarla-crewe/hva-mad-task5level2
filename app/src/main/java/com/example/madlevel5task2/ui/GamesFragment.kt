@@ -16,6 +16,7 @@ import com.example.madlevel5task2.R
 import com.example.madlevel5task2.databinding.FragmentGamesBinding
 import com.example.madlevel5task2.model.Game
 import com.example.madlevel5task2.model.GameViewModel
+import com.google.android.material.snackbar.Snackbar
 
 
 class GamesFragment : Fragment() {
@@ -78,6 +79,12 @@ class GamesFragment : Fragment() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position = viewHolder.adapterPosition
                 viewModel.deleteGame(games[position])
+
+                val snackbar = Snackbar.make(binding.rvGames, R.string.success_delete, Snackbar.LENGTH_LONG)
+                snackbar.setAction(R.string.undo, View.OnClickListener{
+                    viewModel.undoDeleteGame()
+                })
+                snackbar.show()
             }
         }
         return ItemTouchHelper(callback)

@@ -15,6 +15,8 @@ class GameViewModel (application: Application) : AndroidViewModel(application) {
 
     var games: LiveData<List<Game>> = gameRepository.getAllGames()
 
+    private var last_deleted_game: Game? = null
+
     fun insertGame(game: Game) {
         mainScope.launch {
             withContext(Dispatchers.IO) {
@@ -24,6 +26,7 @@ class GameViewModel (application: Application) : AndroidViewModel(application) {
     }
 
     fun deleteGame(game: Game) {
+        last_deleted_game = game
         mainScope.launch {
             withContext(Dispatchers.IO) {
                 gameRepository.deleteGame(game)
@@ -38,4 +41,6 @@ class GameViewModel (application: Application) : AndroidViewModel(application) {
             }
         }
     }
+
+    fun undoDeleteGame() = insertGame(last_deleted_game!!)
 }
