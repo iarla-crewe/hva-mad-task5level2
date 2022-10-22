@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.madlevel5task2.R
 import com.example.madlevel5task2.databinding.FragmentGamesBinding
 import com.example.madlevel5task2.model.Game
@@ -42,6 +44,8 @@ class GamesFragment : Fragment() {
     }
 
     private fun initViews() {
+        binding.rvGames.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        binding.rvGames.adapter = gameAdaptor
         binding.fabAdd.setOnClickListener {
             findNavController().navigate(R.id.action_gamesFragment_to_addGameFragment)
         }
