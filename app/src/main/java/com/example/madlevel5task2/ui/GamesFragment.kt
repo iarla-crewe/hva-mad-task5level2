@@ -60,6 +60,7 @@ class GamesFragment : Fragment() {
         viewModel.games.observe(viewLifecycleOwner, Observer { games ->
             this@GamesFragment.games.clear()
             this@GamesFragment.games.addAll(games)
+            this@GamesFragment.games.sortBy { it.releaseDate }
             gameAdaptor.notifyDataSetChanged()
         })
     }
